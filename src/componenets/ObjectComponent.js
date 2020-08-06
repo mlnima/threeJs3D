@@ -2,11 +2,11 @@ import React, {useEffect, useState, useContext, useRef} from 'react';
 import * as THREE from 'three'
 import OrbitControls from 'three-orbitcontrols';
 import './ObjectComponent.scss'
-import WoodenBox from '../objects/woodenBox/Crate1.obj'
-import boxTexture from '../objects/download.jpg'
+// import WoodenBox from '../objects/woodenBox/Crate1.obj'
 
-import robotModel from '../objects/starwarsRobot/r2-d2.obj'
-import robotMtl from '../objects/starwarsRobot/r2-d2.mtl'
+
+// import robotModel from '../objects/starwarsRobot/r2-d2.obj'
+// import robotMtl from '../objects/starwarsRobot/r2-d2.mtl'
 
 import {MTLLoader, OBJLoader} from 'three-obj-mtl-loader'
 import STLLoader  from 'three-stl-loader'
@@ -74,8 +74,8 @@ const ObjectComponent = props => {
     const addObject = async (position) => {
 
         let object = new THREE.BoxGeometry(2, 1, 1);
-        const texture = new THREE.TextureLoader().load(boxTexture)
-        let material = new THREE.MeshBasicMaterial({map: texture})
+        // const texture = new THREE.TextureLoader().load(boxTexture)
+        // let material = new THREE.MeshBasicMaterial({map: texture})
         // material = new THREE.MeshBasicMaterial({ color: props.frameColor,});
         let mesh = new THREE.Mesh(object, material);
 
@@ -227,11 +227,11 @@ const ObjectComponent = props => {
         raycaster.setFromCamera(mouse, camera);
         let intersects = raycaster.intersectObjects(scene.children);
 
-        intersects.forEach(child => {
-            const texture = new THREE.TextureLoader().load(boxTexture)
-            intersects[intersects.indexOf(child)].object.material = new THREE.MeshBasicMaterial({map: texture})
-
-        })
+        // intersects.forEach(child => {
+        //     const texture = new THREE.TextureLoader().load(boxTexture)
+        //     intersects[intersects.indexOf(child)].object.material = new THREE.MeshBasicMaterial({map: texture})
+        //
+        // })
 
         renderer.render(scene, camera);
 

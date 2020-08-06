@@ -5,7 +5,7 @@ import './ObjectEditor.scss'
 import OrbitControls from 'three-orbitcontrols';
 import {MTLLoader, OBJLoader, MtlObjBridge} from 'three-obj-mtl-loader'
 import STLLoader from 'three-stl-loader'
-import boxTexture from "../../../objects/download.jpg";
+
 // import * as MtlObjBridge from "three";
 // import {MtlObjBridge} from './resources/threejs/r119/examples/jsm/loaders/obj2/bridge/MtlObjBridge.js';
 OBJLoader(THREE);
@@ -39,7 +39,7 @@ const ObjectEditor = props => {
         animate()
         window.addEventListener('mousemove', onMouseMove, false)
         window.addEventListener('click', onClickOnObjectHandler, false)
-        window.addEventListener('contextmenu', onContextMenuHandler, false)
+        // window.addEventListener('contextmenu', onContextMenuHandler, false)
         window.addEventListener('resize', onWindowResize, false)
         window.requestAnimationFrame(animate);
     }, [contextData.state.objects]);
@@ -145,19 +145,19 @@ const ObjectEditor = props => {
     }
 
 
-    const onContextMenuHandler = () => {
-
-        raycaster.setFromCamera(mouse, camera);
-        let intersects = raycaster.intersectObjects(scene.children);
-
-        intersects.forEach(child => {
-            const texture = new THREE.TextureLoader().load(boxTexture)
-            // intersects[intersects.indexOf(child)].object.material = new THREE.MeshBasicMaterial({map: texture})
-            intersects[intersects.indexOf(child)].object.material = null
-
-        })
-        renderer.render(scene, camera);
-    }
+    // const onContextMenuHandler = () => {
+    //
+    //     raycaster.setFromCamera(mouse, camera);
+    //     let intersects = raycaster.intersectObjects(scene.children);
+    //
+    //     intersects.forEach(child => {
+    //         const texture = new THREE.TextureLoader().load(boxTexture)
+    //         // intersects[intersects.indexOf(child)].object.material = new THREE.MeshBasicMaterial({map: texture})
+    //         intersects[intersects.indexOf(child)].object.material = null
+    //
+    //     })
+    //     renderer.render(scene, camera);
+    // }
 
 
     const onMouseMove = (e) => {
