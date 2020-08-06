@@ -1,0 +1,12 @@
+.internal-objects{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  .internal-object-preview{
+
+    .internal-object-preview-image{
+      border-radius: 12px;
+      width: 130px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import "./src/styles/buttons";
+
+.object-control {
+  margin: 20px 0;
+
+  .position-control ,.size-control{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    button {
+      @include blackBtn;
+      margin: 2px;
+
+    }
+
+    .plus45Degree {
+
+      i {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .position-control{
+
+  }
+
+  .rotation-control {
+    .negative-direction {
+      i {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+
+}

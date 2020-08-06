@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-auto-columns: 300px 1fr;
+  grid-template-areas: 'header header' 'sidebar main';
+  grid-gap: 10px;
+
+
+}
+

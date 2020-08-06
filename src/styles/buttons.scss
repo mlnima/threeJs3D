@@ -1,0 +1,16 @@
+@mixin blackBtn {
+  background-color: black;
+  border: solid 1px white;
+  padding: 10px 15px;
+  outline: none;
+  color: white;
+  border-radius: 12px;
+  margin: 10px 0;
+  transition: .8s;
+  &:hover {
+    background-color: white;
+    color: black;
+
+  }
+}
+
